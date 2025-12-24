@@ -1,0 +1,2687 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم لامير - فنون الطهي الراقية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-dark: #5D2906;
+            --secondary: #E8D0B3;
+            --accent: #C19A6B;
+            --gold: #D4AF37;
+            --light: #FAF6F0;
+            --dark: #2C1810;
+            --brown-light: #B38B6D;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-hover: 0 20px 50px rgba(0,0,0,0.15);
+            --radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f9f5f0 0%, #f1e9e0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            direction: rtl;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 24px;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+        }
+        
+        .logo-text h1 {
+            font-family: 'El Messiri', serif;
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--brown-light);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            padding: 12px 25px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .nav-link:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        .cart-badge {
+            background: var(--gold);
+            color: var(--primary-dark);
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 25, 15, 0.85), rgba(45, 25, 15, 0.9)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=2000&auto=format&fit=crop') no-repeat center/cover;
+            padding: 150px 0;
+            text-align: center;
+            border-radius: 0 0 var(--radius) var(--radius);
+            margin-bottom: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=2000&auto=format&fit=crop') center/cover;
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-family: 'El Messiri', serif;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.4);
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .section-title h2 {
+            font-family: 'El Messiri', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .section-title p {
+            color: var(--brown-light);
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.2rem;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        /* Categories Section */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--secondary);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .category-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .category-card:hover .category-image img {
+            transform: scale(1.1);
+        }
+        
+        .category-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -45px auto 20px;
+            color: var(--gold);
+            font-size: 30px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+            border: 3px solid white;
+        }
+        
+        .category-info h3 {
+            font-family: 'El Messiri', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .category-info p {
+            color: var(--brown-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--secondary);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 2;
+        }
+        
+        .product-badge.featured {
+            background: linear-gradient(135deg, var(--gold) 0%, #B8860B 100%);
+            color: var(--primary-dark);
+        }
+        
+        .product-badge.new {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        .product-badge.out-of-stock {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: white;
+        }
+        
+        .product-badge.chef-special {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            color: white;
+        }
+        
+        .product-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image.out-of-stock::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-category {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .product-name {
+            font-family: 'El Messiri', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            color: var(--brown-light);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--secondary);
+            flex-direction: row-reverse;
+        }
+        
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: left;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .price-lbp {
+            font-size: 1.2rem;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .lbp-flag {
+            width: 20px;
+            height: 15px;
+            background: linear-gradient(to bottom, #ed1c24 33.33%, white 33.33%, white 66.66%, #ed1c24 66.66%);
+            border: 1px solid #ccc;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+        
+        .price-unit {
+            font-size: 1rem;
+            color: var(--brown-light);
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .whatsapp-btn, .call-btn, .reserve-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .call-btn {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .call-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .reserve-btn {
+            background: var(--gold);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .reserve-btn:hover {
+            background: #B8860B;
+            transform: translateY(-3px);
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 12px 30px;
+            background: white;
+            border: 2px solid var(--secondary);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--secondary);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--gold);
+            font-size: 32px;
+        }
+        
+        .feature-card h3 {
+            font-family: 'El Messiri', serif;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--secondary);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1;
+            font-family: 'El Messiri', serif;
+        }
+        
+        .stat-label {
+            color: var(--brown-light);
+            font-size: 1.1rem;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        
+        /* Store Location */
+        .restaurant-location {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 60px 0;
+            border: 1px solid var(--secondary);
+        }
+        
+        .location-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 25px 40px;
+        }
+        
+        .location-header h3 {
+            font-family: 'El Messiri', serif;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .location-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--brown-light);
+        }
+        
+        .map-placeholder i {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .address-info {
+            padding: 20px;
+        }
+        
+        .address-info h4 {
+            font-family: 'El Messiri', serif;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .address-details {
+            list-style: none;
+        }
+        
+        .address-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--brown-light);
+        }
+        
+        .address-details i {
+            color: var(--primary);
+            width: 25px;
+        }
+        
+        /* Out of Stock Styles */
+        .out-of-stock-overlay {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 30px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1.2rem;
+            z-index: 3;
+        }
+        
+        .out-of-stock-btn {
+            background: #95a5a6 !important;
+            color: white !important;
+            cursor: not-allowed !important;
+        }
+        
+        .out-of-stock-btn:hover {
+            transform: none !important;
+            background: #7f8c8d !important;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2c1810 100%);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 100px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-family: 'El Messiri', serif;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(-5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-content {
+            background: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 10000;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        /* Chef Section */
+        .chef-section {
+            background: linear-gradient(rgba(139, 69, 19, 0.9), rgba(93, 41, 6, 0.95)), 
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=2000&auto=format&fit=crop') no-repeat center/cover;
+            padding: 100px 0;
+            text-align: center;
+            border-radius: var(--radius);
+            margin: 60px 0;
+            color: white;
+            position: relative;
+        }
+        
+        .chef-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .chef-content h3 {
+            font-family: 'El Messiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .chef-content p {
+            font-family: 'Noto Naskh Arabic', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .chef-quote {
+            font-style: italic;
+            border-right: 3px solid var(--gold);
+            padding-right: 20px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: right;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero {
+                padding: 100px 20px;
+            }
+            
+            .price {
+                font-size: 1.5rem;
+            }
+            
+            .price-lbp {
+                font-size: 1rem;
+            }
+            
+            .chef-content h3 {
+                font-size: 2rem;
+            }
+            
+            .chef-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>مطعم لامير</h1>
+                        <span>فنون الطهي الراقية</span>
+                    </div>
+                </div>
+                
+                <nav class="nav">
+                    <a href="#" class="nav-link active" onclick="showSection('home')">
+                        <i class="fas fa-home"></i> الرئيسية
+                    </a>
+                    <a href="#" class="nav-link" onclick="showSection('menu')">
+                        <i class="fas fa-utensils"></i> قائمة الطعام
+                        <span class="cart-badge" id="menuCount">45</span>
+                    </a>
+                    <a href="#" class="nav-link" onclick="showCartModal()">
+                        <i class="fas fa-shopping-basket"></i> سلة الطلبات
+                        <span class="cart-badge" id="cartTotalItems">0</span>
+                    </a>
+                    <a href="#" class="nav-link" onclick="showSection('about')">
+                        <i class="fas fa-info-circle"></i> عن المطعم
+                    </a>
+                    <a href="#" class="nav-link" onclick="openAdminLogin()" style="background: var(--dark); color: white;">
+                        <i class="fas fa-user-shield"></i> لوحة التحكم
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home-section">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>ملتقى الذواقة الراقية</h2>
+                        <p>استمتع بتجربة فريدة من فنون الطهي العالمي في أجواء فاخرة. حيث نقدم أشهى المأكولات العربية والدولية بإتقان ومذاق لا يُنسى.</p>
+                        <button class="btn btn-primary" onclick="showSection('menu')">
+                            <i class="fas fa-utensils"></i> تصفح قائمة الطعام
+                        </button>
+                        <button class="btn btn-secondary" style="margin-right: 15px;" onclick="scrollToLocation()">
+                            <i class="fas fa-map-marker-alt"></i> زورونا في المطعم
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Chef Section -->
+                <div class="chef-section animate">
+                    <div class="chef-content">
+                        <h3>كلمات الشيف</h3>
+                        <p>في مطعم لامير، نؤمن بأن الطعام فنٌّ راقٍ يجمع بين الحواس. نستخدم أفضل المكونات الطازجة ونتقن تقنيات الطهي العالمية لتقديم تجربة لا تُنسى.</p>
+                        
+                        <div class="chef-quote">
+                            <p>"الطبخ فن يحتاج إلى شغف وإتقان. كل طبق هو قصة نرويها عبر النكهات والروائح والألوان."</p>
+                            <p style="text-align: left; margin-top: 10px;">— الشيف فادي</p>
+                        </div>
+                        
+                        <p>نتعاون مع أفضل المزارعين والموردين لنضمن لكم جودة لا مثيل لها في كل لقمة تذوقونها.</p>
+                    </div>
+                </div>
+                
+                <!-- Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-card animate">
+                        <div class="stat-number">1200+</div>
+                        <div class="stat-label">عميل راضٍ</div>
+                    </div>
+                    <div class="stat-card animate">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">طبق مميز</div>
+                    </div>
+                    <div class="stat-card animate">
+                        <div class="stat-number">سريعة</div>
+                        <div class="stat-label">خدمة التوصيل</div>
+                    </div>
+                    <div class="stat-card animate">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">مكونات طازجة</div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant Location -->
+                <div class="restaurant-location animate">
+                    <div class="location-header">
+                        <h3><i class="fas fa-map-marker-alt"></i> زورونا في المطعم</h3>
+                    </div>
+                    <div class="location-content">
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <i class="fas fa-utensils"></i>
+                                <h4>مطعم لامير</h4>
+                                <p>اضغط أدناه للعرض على خرائط جوجل</p>
+                                <a href="https://www.google.com/maps?q=Beirut,Lebanon&hl=ar" target="_blank" class="btn btn-primary" style="margin-top: 20px;">
+                                    <i class="fas fa-external-link-alt"></i> عرض على خرائط جوجل
+                                </a>
+                            </div>
+                        </div>
+                        <div class="address-info">
+                            <h4>معلومات المطعم</h4>
+                            <ul class="address-details">
+                                <li><i class="fas fa-user"></i> <strong>المالك:</strong> علي ايوبي</li>
+                                <li><i class="fas fa-map-pin"></i> <strong>العنوان:</strong> بيروت، لبنان</li>
+                                <li><i class="fas fa-clock"></i> <strong>ساعات العمل:</strong> 11:00 صباحاً - 12:00 منتصف الليل</li>
+                                <li><i class="fas fa-phone"></i> <strong>الهاتف:</strong> +961 81400899</li>
+                                <li><i class="fab fa-whatsapp"></i> <strong>واتساب:</strong> +961 81400899</li>
+                                <li><i class="fas fa-envelope"></i> <strong>البريد الإلكتروني:</strong> restaurant.lamir@gmail.com</li>
+                            </ul>
+                            <button onclick="showReservationInfo()" class="btn" style="background: var(--gold); color: var(--primary-dark); margin-top: 20px; width: 100%;">
+                                <i class="fas fa-calendar-check"></i> خدمة الحجز المسبق متوفرة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categories -->
+                <div class="section-title">
+                    <h2>أقسام قائمتنا</h2>
+                    <p>اكتشف تشكيلتنا المميزة من المأكولات والمشروبات</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card animate" onclick="filterProducts('مقبلات')">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop" alt="مقبلات">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-drumstick-bite"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>مقبلات</h3>
+                            <p>مقبلات لذيذة لبدء وجبتكم</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" onclick="filterProducts('أطباق رئيسية')">
+                        <div class="category-image">
+                            <img src="https://www.aljazeera.net/wp-content/uploads/2023/06/shutterstock_1690553083-1687609671.jpg?resize=770%2C513&quality=80" alt="أطباق رئيسية">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>أطباق رئيسية</h3>
+                            <p>أشهى الأطباق العربية والدولية</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" onclick="filterProducts('مشروبات')">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=600&h=400&fit=crop" alt="مشروبات">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-wine-glass-alt"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>مشروبات</h3>
+                            <p>مشروبات منعشة وعصائر طبيعية</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" onclick="filterProducts('حلويات')">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop" alt="حلويات">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>حلويات</h3>
+                            <p>تشكيلة مميزة من الحلويات الشرقية والغربية</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" onclick="filterProducts('مشاوي')">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop" alt="مشاوي">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>مشاوي</h3>
+                            <p>أفضل قطع اللحم والدجاج المشوي</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" onclick="filterProducts('أطباق خاصة')">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop" alt="أطباق خاصة">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>أطباق خاصة</h3>
+                            <p>إبداعات الشيف الخاصة</p>
+                            <button class="btn" style="background: var(--primary); color: white; width: 100%;">
+                                تصفح القائمة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Why Choose Us -->
+                <div class="section-title">
+                    <h2>لماذا تختار مطعم لامير</h2>
+                    <p>نقدم لكم تجربة طعام استثنائية بمعايير عالية</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>مكونات طازجة</h3>
+                        <p style="color: var(--brown-light);">نستخدم أفضل المكونات الطازجة والمحلية</p>
+                    </div>
+                    
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>شيف محترف</h3>
+                        <p style="color: var(--brown-light);">شيف ذو خبرة عالمية في فنون الطهي</p>
+                    </div>
+                    
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>جودة عالية</h3>
+                        <p style="color: var(--brown-light);">نلتزم بأعلى معايير الجودة والنظافة</p>
+                    </div>
+                    
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>توصيل سريع</h3>
+                        <p style="color: var(--brown-light);">خدمة توصيل سريعة لمنطقة بيروت</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="section-title">
+                    <h2>آراء زبائننا</h2>
+                    <p>كلمات رضا من زبائننا الكرام</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card animate" style="text-align: center; padding: 30px;">
+                        <div class="category-icon" style="margin-top: 0; background: var(--gold); color: var(--primary-dark);">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>الدكتور محمد</h3>
+                        <p style="color: var(--brown-light); font-style: italic; margin: 15px 0;">"أفضل مطعم في بيروت! الطعام لذيذ والخدمة ممتازة. أنصح الجميع بتجربة الطبق الخاص بالشيف."</p>
+                        <div style="color: var(--gold);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" style="text-align: center; padding: 30px;">
+                        <div class="category-icon" style="margin-top: 0; background: var(--accent); color: white;">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>السيدة ليلى</h3>
+                        <p style="color: var(--brown-light); font-style: italic; margin: 15px 0;">"تجربة رائعة! الحلويات خاصة البقلاوة كانت استثنائية. سأعود بالتأكيد مع عائلتي."</p>
+                        <div style="color: var(--gold);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card animate" style="text-align: center; padding: 30px;">
+                        <div class="category-icon" style="margin-top: 0; background: var(--primary); color: white;">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>السيد كريم</h3>
+                        <p style="color: var(--brown-light); font-style: italic; margin: 15px 0;">"المكان المفضل لدي للاجتماعات العائلية. الجو راقي والطعام دائماً على أعلى مستوى."</p>
+                        <div style="color: var(--gold);">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Menu Section -->
+            <section id="menu-section" style="display: none;">
+                <div class="section-title">
+                    <h2>قائمة الطعام</h2>
+                    <p>اكتشف تشكيلتنا المميزة من المأكولات والمشروبات</p>
+                </div>
+                
+                <!-- Category Filter -->
+                <div class="category-filter">
+                    <button class="filter-btn active" onclick="filterProducts('الكل')">كل الأطباق</button>
+                    <button class="filter-btn" onclick="filterProducts('مقبلات')">مقبلات</button>
+                    <button class="filter-btn" onclick="filterProducts('أطباق رئيسية')">أطباق رئيسية</button>
+                    <button class="filter-btn" onclick="filterProducts('مشروبات')">مشروبات</button>
+                    <button class="filter-btn" onclick="filterProducts('حلويات')">حلويات</button>
+                    <button class="filter-btn" onclick="filterProducts('مشاوي')">مشاوي</button>
+                    <button class="filter-btn" onclick="filterProducts('أطباق خاصة')">أطباق خاصة</button>
+                    <button class="filter-btn" onclick="filterProducts('متوفر')">متوفر</button>
+                    <button class="filter-btn" onclick="filterProducts('غير متوفر')">غير متوفر</button>
+                </div>
+                
+                <div id="all-products" class="products-grid">
+                    <!-- All menu items will load here -->
+                </div>
+            </section>
+            
+            <!-- About Section -->
+            <section id="about-section" style="display: none;">
+                <div class="section-title">
+                    <h2>عن مطعم لامير</h2>
+                    <p>قصة نجاحنا والتزامنا بالتميز</p>
+                </div>
+                
+                <div style="background: white; padding: 60px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 50px; border: 1px solid var(--secondary);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 50px;">
+                        <div>
+                            <h3 style="font-family: 'El Messiri', serif; color: var(--primary); font-size: 2rem; margin-bottom: 25px; line-height: 1.3;">فلسفتنا في الطهي</h3>
+                            <p style="color: var(--brown-light); line-height: 1.8; margin-bottom: 25px; font-family: 'Noto Naskh Arabic', serif;">
+                                تأسس مطعم لامير على الإيمان بأن الطعام فنٌ راقٍ يجمع بين الحواس. 
+                                نسعى لتقديم تجربة طعام استثنائية تجمع بين الأصالة والحداثة.
+                            </p>
+                            <p style="color: var(--brown-light); line-height: 1.8; font-family: 'Noto Naskh Arabic', serif;">
+                                نستخدم أفضل المكونات الطازجة من مصادر محلية ونتقن تقنيات الطهي العالمية 
+                                لتقديم أطباق تليق بذوقكم الرفيع وتحافظ على القيم الغذائية.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1554672408-730436b60dde?w=600&h=400&fit=crop" 
+                                 alt="مطعمنا" style="width: 100%; border-radius: var(--radius);">
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <h3 style="color: var(--primary); margin-bottom: 40px; font-family: 'El Messiri', serif;">معلومات التواصل</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                            <div>
+                                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+                                            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--gold); font-size: 28px;">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4 style="margin-bottom: 10px; font-family: 'El Messiri', serif;">المالك</h4>
+                                <p style="color: var(--brown-light);">علي ايوبي</p>
+                            </div>
+                            
+                            <div>
+                                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+                                            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--gold); font-size: 28px;">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h4 style="margin-bottom: 10px; font-family: 'El Messiri', serif;">الهاتف</h4>
+                                <a href="tel:+96170123456" style="color: var(--primary); text-decoration: none;">+961 81400899</a>
+                            </div>
+                            
+                            <div>
+                                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); 
+                                            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-dark); font-size: 28px;">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <h4 style="margin-bottom: 10px; font-family: 'El Messiri', serif;">واتساب</h4>
+                                <a href="https://wa.me/96170123456" style="color: var(--primary); text-decoration: none;">+961 81400899</a>
+                            </div>
+                            
+                            <div>
+                                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--gold) 0%, #B8860B 100%); 
+                                            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary-dark); font-size: 28px;">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4 style="margin-bottom: 10px; font-family: 'El Messiri', serif;">البريد الإلكتروني</h4>
+                                <a href="mailto:restaurant.lamir@gmail.com" style="color: var(--primary); text-decoration: none;">restaurant.lamir@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>مطعم لامير</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px; font-family: 'Noto Naskh Arabic', serif;">ملتقى الذواقة الراقية، نقدم أشهى المأكولات العربية والدولية بإتقان ومذاق لا يُنسى.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/96170123456" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showSection('home')"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                        <li><a href="#" onclick="showSection('menu')"><i class="fas fa-chevron-left"></i> قائمة الطعام</a></li>
+                        <li><a href="#" onclick="showCartModal()"><i class="fas fa-chevron-left"></i> سلة الطلبات</a></li>
+                        <li><a href="#" onclick="showSection('about')"><i class="fas fa-chevron-left"></i> عن المطعم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>معلومات التواصل</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+96170123456"><i class="fas fa-phone"></i> +961 70 123456</a></li>
+                        <li><a href="https://wa.me/96170123456"><i class="fab fa-whatsapp"></i> +961 70 123456 (واتساب)</a></li>
+                        <li><a href="mailto:restaurant.lamir@gmail.com"><i class="fas fa-envelope"></i> restaurant.lamir@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> بيروت، لبنان</a></li>
+                        <li><a href="#"><i class="fas fa-user"></i> المالك: علي</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>ساعات العمل</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 11:00 صباحاً - 12:00 منتصف الليل</li>
+                        <li><i class="fas fa-clock"></i> الجمعة: 1:00 ظهراً - 1:00 فجراً</li>
+                        <li><i class="fas fa-shipping-fast"></i> خدمة التوصيل متوفرة</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 مطعم لامير. جميع الحقوق محفوظة. | مطعم فاخر في بيروت، لبنان</p>
+                <p style="margin-top: 10px;">صمم بكل <i class="fas fa-heart" style="color: var(--gold);"></i> لعشاق الطعام الراقي</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cart Modal -->
+    <div id="cartModal" style="display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: white; border-radius: var(--radius); width: 90%; max-width: 500px; padding: 30px; position: relative; box-shadow: var(--shadow);">
+            <span onclick="closeCartModal()" style="position: absolute; top: 15px; left: 20px; font-size: 30px; cursor: pointer; color: var(--brown-light);">&times;</span>
+            
+            <h2 style="color: var(--primary); margin-bottom: 20px; font-family: 'El Messiri', serif;">
+                <i class="fas fa-shopping-basket"></i> سلة الطلبات
+            </h2>
+            
+            <div id="cartItems" style="max-height: 300px; overflow-y: auto; margin-bottom: 20px;">
+                <!-- Cart items will appear here -->
+            </div>
+            
+            <div style="background: var(--light); padding: 20px; border-radius: var(--radius); margin-bottom: 20px; border: 1px solid var(--secondary);">
+                <div style="display: flex; justify-content: space-between;">
+                    <strong>المبلغ الإجمالي:</strong>
+                    <span id="cartTotal" style="font-size: 1.5rem; color: var(--primary);">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.9rem; color: var(--brown-light);">
+                    <span>بالليرة اللبنانية:</span>
+                    <span id="cartTotalLBP">0 ل.ل</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 10px; flex-direction: row-reverse;">
+                <button onclick="clearCart()" class="btn" style="background: var(--light); color: var(--dark); flex: 1; border: 1px solid var(--secondary);">
+                    <i class="fas fa-trash"></i> إفراغ السلة
+                </button>
+                <button onclick="closeCartModal()" class="btn" style="background: var(--brown-light); color: white; flex: 1;">
+                    <i class="fas fa-times"></i> إغلاق
+                </button>
+                <button onclick="checkout()" class="btn btn-primary" style="flex: 2;">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reservation Info Modal -->
+    <div id="reservationModal" style="display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: white; border-radius: var(--radius); width: 90%; max-width: 500px; padding: 30px; position: relative; box-shadow: var(--shadow);">
+            <span onclick="closeReservationModal()" style="position: absolute; top: 15px; left: 20px; font-size: 30px; cursor: pointer; color: var(--brown-light);">&times;</span>
+            
+            <h2 style="color: var(--gold); margin-bottom: 20px; font-family: 'El Messiri', serif;">
+                <i class="fas fa-calendar-check"></i> خدمة الحجز المسبق
+            </h2>
+            
+            <div style="margin-bottom: 25px;">
+                <h4 style="color: var(--primary); margin-bottom: 15px; font-family: 'El Messiri', serif;">📅 احجز طاولتك مسبقاً!</h4>
+                <ul style="color: var(--brown-light); line-height: 1.8; padding-right: 20px; font-family: 'Noto Naskh Arabic', serif;">
+                    <li>احجز طاولتك قبل 3 ساعات على الأقل</li>
+                    <li>طاولات خاصة للعائلات والمجموعات الكبيرة</li>
+                    <li>إمكانية الحجز عبر الهاتف أو الواتساب</li>
+                    <li>أجواء راقية ومناسبة لكل المناسبات</li>
+                    <li>تجهيزات خاصة للأعياد والمناسبات</li>
+                </ul>
+            </div>
+            
+            <div style="background: var(--light); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--secondary);">
+                <h4 style="color: var(--primary); margin-bottom: 10px; font-family: 'El Messiri', serif;">📞 كيفية الحجز:</h4>
+                <ol style="color: var(--brown-light); line-height: 1.8; padding-right: 20px; font-family: 'Noto Naskh Arabic', serif;">
+                    <li>اتصل على الرقم +961 70 123456</li>
+                    <li>أو أرسل رسالة عبر الواتساب</li>
+                    <li>اذكر عدد الأشخاص وتاريخ الحجز</li>
+                    <li>سنؤكد الحجز خلال 30 دقيقة</li>
+                </ol>
+            </div>
+            
+            <button onclick="closeReservationModal()" class="btn" style="background: var(--gold); color: var(--primary-dark); width: 100%; font-weight: 600;">
+                <i class="fas fa-check"></i> فهمت
+            </button>
+        </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-content animate">
+            <h2 style="color: var(--primary); margin-bottom: 30px; text-align: center; font-family: 'El Messiri', serif;">
+                <i class="fas fa-lock"></i> دخول الإدارة
+            </h2>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; font-family: 'Cairo', sans-serif;">كلمة المرور</label>
+                <input type="password" id="adminPassword" style="width: 100%; padding: 12px; border: 2px solid var(--secondary); border-radius: 8px; font-size: 16px; font-family: 'Cairo', sans-serif;">
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-family: 'Cairo', sans-serif;">
+                    <input type="checkbox" id="rememberMe">
+                    تذكرني
+                </label>
+            </div>
+            
+            <button onclick="adminLogin()" class="btn btn-primary" style="width: 100%; margin-bottom: 15px;">
+                <i class="fas fa-sign-in-alt"></i> دخول
+            </button>
+            
+            <button onclick="closeLoginModal()" class="btn" style="width: 100%; background: var(--light); color: var(--dark); border: 1px solid var(--secondary);">
+                <i class="fas fa-times"></i> إلغاء
+            </button>
+            
+            <p style="text-align: center; color: var(--brown-light); font-size: 12px; margin-top: 20px; font-family: 'Cairo', sans-serif;">
+                <i class="fas fa-info-circle"></i> اتصل بعلي للحصول على صلاحية الدخول
+            </p>
+        </div>
+    </div>
+    
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div style="background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--secondary);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="color: var(--primary); font-family: 'El Messiri', serif;">
+                    <i class="fas fa-user-shield"></i> لوحة التحكم
+                </h2>
+                <button onclick="closeAdminPanel()" class="btn" style="background: var(--light); color: var(--dark); border: 1px solid var(--secondary);">
+                    <i class="fas fa-times"></i> خروج
+                </button>
+            </div>
+        </div>
+        
+        <div style="padding: 30px; text-align: center;">
+            <div style="background: var(--light); padding: 40px; border-radius: var(--radius); margin-bottom: 30px; border: 1px solid var(--secondary);">
+                <i class="fas fa-info-circle" style="font-size: 60px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-family: 'El Messiri', serif;">تعديل الأطباق مباشرة</h3>
+                <p style="color: var(--brown-light); margin-bottom: 25px; font-family: 'Noto Naskh Arabic', serif;">
+                    لتعديل الأطباق والأسعار والصور والوصف، تحتاج لتعديل الكود مباشرة.<br>
+                    ابحث عن مصفوفة "menuItems" في كود الجافاسكريبت وقم بتعديلها هناك.
+                </p>
+                
+                <div style="background: white; padding: 20px; border-radius: var(--radius); margin-top: 30px; text-align: right; font-family: monospace; font-size: 14px; overflow-x: auto; border: 1px solid var(--secondary);">
+                    <p style="color: var(--dark); margin-bottom: 10px;">مثال لكيفية تعديل طبق:</p>
+                    <pre style="color: var(--dark);">
+{
+    id: 1,
+    name: "حمص باللحم",
+    price: 12.50,
+    image: "",
+    category: "مقبلات",
+    description: "وصف جديد هنا",
+    featured: true,
+    new: true,
+    inStock: true  // ضع false إذا لم يكن متوفراً
+}
+                    </pre>
+                </div>
+            </div>
+            
+            <h3 style="color: var(--primary); margin-bottom: 20px; text-align: right; font-family: 'El Messiri', serif;">
+                <i class="fas fa-utensils"></i> الأطباق الحالية (${menuItems.length})
+            </h3>
+            
+            <div id="adminMenuList" style="background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--secondary);">
+                <!-- Menu list for admin will load here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ═══════════════════════════════════════════════════════
+    // EDIT MENU ITEMS HERE - تعديل الأطباق هنا
+    // ═══════════════════════════════════════════════════════
+    let menuItems = [
+        // مقبلات
+        {
+            id: 1,
+            name: "حمص باللحم",
+            price: 8.50,
+            image: "./images/homos-01.png",
+            category: "مقبلات",
+            description: "حمص طازج مع قطع لحم صغيرة وزيت الزيتون",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 2,
+            name: "تبولة",
+            price: 7.25,
+            image: "./images/bf694f51045bc40755e2bec1fcf22fdb.png.webp",
+            category: "مقبلات",
+            description: "سلطة تبولة تقليدية مع البقدونس والبرغل والطماطم",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 3,
+            name: "فطائر سبانخ",
+            price: 9.00,
+            image: "./images/spinach.webp",
+            category: "مقبلات",
+            description: "فطائر محشوة بالسبانخ والجبنة",
+            featured: true,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 4,
+            name: "ورق عنب",
+            price: 10.50,
+            image: "./images/waraa 3enab.jpg",
+            category: "مقبلات",
+            description: "أوراق عنب محشوة بالأرز واللحم المفروم",
+            featured: false,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 5,
+            name: "مقبلات متنوعة",
+            price: 15.00,
+            image: "./images/mokabilet.webp",
+            category: "مقبلات",
+            description: "تشكيلة من المقبلات الشرقية (حمص، بابا غنوج، تبولة)",
+            featured: true,
+            new: false,
+            inStock: false  // مثال لطبق غير متوفر
+        },
+        
+        // أطباق رئيسية
+        {
+            id: 6,
+            name: "منسف لبناني",
+            price: 22.50,
+            image: "./images/images.jfif",
+            category: "أطباق رئيسية",
+            description: "لحم ضأن مع الأرز واللبن والصنوبر",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 7,
+            name: "كبسة دجاج",
+            price: 18.75,
+            image: "./images/kabseh.jfif",
+            category: "أطباق رئيسية",
+            description: "أرز مع دجاج وتوابل خاصة",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 8,
+            name: "مقلوبة باذنجان",
+            price: 17.50,
+            image: "./images/MAALOBEH-BETINGAN.jpg",
+            category: "أطباق رئيسية",
+            description: "باذنجان مع لحم ضأن وأرز",
+            featured: true,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 9,
+            name: "كوسا محشي",
+            price: 16.00,
+            image: "./images/كوسا-محشي-باللبن.jpg",
+            category: "أطباق رئيسية",
+            description: "كوسا محشية بالأرز واللحم",
+            featured: false,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 10,
+            name: "سمك مشوي",
+            price: 24.00,
+            image: "./images/fish.jpg",
+            category: "أطباق رئيسية",
+            description: "سمك دنيس مشوي مع صلصة خاصة",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        
+        // مشروبات
+        {
+            id: 11,
+            name: "عصير برتقال طازج",
+            price: 4.50,
+            image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=600&h=400&fit=crop",
+            category: "مشروبات",
+            description: "عصير برتقال طازج معقطع",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 12,
+            name: "ليموناضة",
+            price: 3.75,
+            image: "./images/lime.jfif",
+            category: "مشروبات",
+            description: "ليموناضة منعشة بالنعناع",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 13,
+            name: "عصير جزر",
+            price: 4.25,
+            image: "./images/carrot.webp",
+            category: "مشروبات",
+            description: "عصير جزر طازج مع القليل من البرتقال",
+            featured: false,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 14,
+            name: "قهوة عربية",
+            price: 3.00,
+            image: "./images/خصائص-قهوه-عربيه-وطرق-تحضرها.webp",
+            category: "مشروبات",
+            description: "قهوة عربية تقليدية بالهيل",
+            featured: true,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 15,
+            name: "شاي بالنعناع",
+            price: 2.50,
+            image: "./images/green tea.jpg",
+            category: "مشروبات",
+            description: "شاي أخضر مع أوراق النعناع الطازجة",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        
+        // حلويات
+        {
+            id: 16,
+            name: "بقلاوة",
+            price: 6.50,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "بقلاوة بالفستق الحلبي والقطر",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 17,
+            name: "كنافة نابلسية",
+            price: 7.25,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "كنافة محشوة بالجبنة والقطر",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 18,
+            name: "أم علي",
+            price: 5.75,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "حلى أم علي التقليدي مع القشطة والمكسرات",
+            featured: false,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 19,
+            name: "معمول بالتمر",
+            price: 8.00,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "معمول تقليدي محشو بالتمر والجوز",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        
+        // مشاوي
+        {
+            id: 20,
+            name: "شاورما لحم",
+            price: 12.50,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "مشاوي",
+            description: "شاورما لحم مع خبز صاج وصلصة ثوم",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 21,
+            name: "كبة مشوية",
+            price: 14.00,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "مشاوي",
+            description: "كبة مشوية مع اللحم المفروم والبرغل",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 22,
+            name: "دجاج مشوي",
+            price: 16.50,
+            image: "./images/farouj.jpg",
+            category: "مشاوي",
+            description: "دجاج مشوي كامل مع صلصة خاصة",
+            featured: true,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 23,
+            name: "كوباب لحم",
+            price: 13.75,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "مشاوي",
+            description: "كوباب لحم مع الخضار المشوية",
+            featured: false,
+            new: true,
+            inStock: false  // مثال لطبق غير متوفر
+        },
+        
+        // أطباق خاصة
+        {
+            id: 24,
+            name: "طبق الشيف الخاص",
+            price: 28.00,
+            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "إبداع الشيف اليومي من أفضل المكونات",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 25,
+            name: "مأكولات بحرية مشكلة",
+            price: 35.00,
+            image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "تشكيلة من المأكولات البحرية الطازجة",
+            featured: true,
+            new: false,
+            inStock: true
+        },
+        {
+            id: 26,
+            name: "وجبة عائلية",
+            price: 45.00,
+            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "وجبة كاملة لعائلة من 4 أشخاص",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        
+        // المزيد من الأطباق الرئيسية
+        {
+            id: 27,
+            name: "مكرونة بصلصة البشاميل",
+            price: 15.50,
+            image: "./images/bachamel.jpg",
+            category: "أطباق رئيسية",
+            description: "مكرونة مع صلصة بشاميل وجبنة موزاريلا",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 28,
+            name: "ستيك لحم",
+            price: 26.00,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "أطباق رئيسية",
+            description: "ستيك لحم مع صلصة الفطر والخضار",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 29,
+            name: "دجاج بالفرن",
+            price: 19.50,
+            image: "./images/farouj.jpg",
+            category: "أطباق رئيسية",
+            description: "دجاج بالفرن مع البطاطا والخضار",
+            featured: false,
+            new: false,
+            inStock: true
+        },
+        
+        // المزيد من المقبلات
+        {
+            id: 30,
+            name: "بابا غنوج",
+            price: 7.50,
+            image: "./images/download (1).jfif",
+            category: "مقبلات",
+            description: "باذنجان مشوي مع الطحينة والليمون",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 31,
+            name: "سلطة فتوش",
+            price: 8.25,
+            image: "./images/fatouch.jpg",
+            category: "مقبلات",
+            description: "سلطة فتوش تقليدية مع خبز مقلي",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        
+        // المزيد من المشروبات
+        {
+            id: 32,
+            name: "سموذي الفراولة",
+            price: 5.50,
+            image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=600&h=400&fit=crop",
+            category: "مشروبات",
+            description: "سموذي الفراولة مع الموز والعسل",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 33,
+            name: "قهوة إسبرسو",
+            price: 3.50,
+            image: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=600&h=400&fit=crop",
+            category: "مشروبات",
+            description: "قهوة إسبرسو إيطالية",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        
+        // المزيد من الحلويات
+        {
+            id: 34,
+            name: "مهلبية بالفستق",
+            price: 6.00,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "مهلبية بالقشطة والفستق الحلبي",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 35,
+            name: "حلاوة الجبن",
+            price: 7.50,
+            image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop",
+            category: "حلويات",
+            description: "حلى الجبن مع التوت والكريمة",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        
+        // المزيد من المشاوي
+        {
+            id: 36,
+            name: "لحم ضأن مشوي",
+            price: 22.00,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "مشاوي",
+            description: "قطع لحم ضأن مشوية مع الأعشاب",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 37,
+            name: "كفتة مشوية",
+            price: 14.50,
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop",
+            category: "مشاوي",
+            description: "كفتة لحم مشوية مع البصل والبهارات",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        
+        // المزيد من الأطباق الخاصة
+        {
+            id: 38,
+            name: "وجبة رمضان",
+            price: 30.00,
+            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "وجبة إفطار رمضان كاملة",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 39,
+            name: "بوفيه عائلي",
+            price: 55.00,
+            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "بوفيه كامل لعائلة من 6 أشخاص",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 40,
+            name: "سفرة العرس",
+            price: 65.00,
+            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "سفرة فاخرة للمناسبات الخاصة",
+            featured: true,
+            new: true,
+            inStock: false  // مثال لطبق غير متوفر
+        },
+        {
+            id: 41,
+            name: "طبق نباتي خاص",
+            price: 18.50,
+            image: "https://images.unsplash.com/photo-1563379091339-03246963d9d6?w=600&h=400&fit=crop",
+            category: "أطباق خاصة",
+            description: "طبق نباتي متنوع من إبداع الشيف",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 42,
+            name: "سمك سلمون",
+            price: 28.50,
+            image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
+            category: "أطباق رئيسية",
+            description: "سمك سلمون مشوي مع صلصة الليمون",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 43,
+            name: "رز بالشعيرية",
+            price: 9.50,
+            image: "./images/rez.jfifa",
+            category: "أطباق رئيسية",
+            description: "أرز مطبوخ مع الشعيرية والبهارات",
+            featured: false,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 44,
+            name: "سلطة سيزر",
+            price: 10.00,
+            image: "./images/sizer.webp",
+            category: "مقبلات",
+            description: "سلطة سيزر مع الدجاج والصلصة الخاصة",
+            featured: true,
+            new: true,
+            inStock: true
+        },
+        {
+            id: 45,
+            name: "مشروبات ساخنة متنوعة",
+            price: 8.00,
+            image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&h=400&fit=crop",
+            category: "مشروبات",
+            description: "تشكيلة من المشروبات الساخنة (قهوة، شاي، سحلب)",
+            featured: false,
+            new: false,
+            inStock: true
+        }
+    ];
+    
+    // سعر الصرف: 1 دولار = 150,000 ليرة لبنانية (تقريبي)
+    const EXCHANGE_RATE = 150000;
+    
+    // سلة الطلبات
+    let cart = JSON.parse(localStorage.getItem('restaurantCart')) || [];
+    
+    // كلمة مرور الإدارة (آمنة)
+    const ADMIN_PASSWORD = "lamir@2024";
+    
+    // التصفية الحالية
+    let currentFilter = 'الكل';
+    
+    // تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        // تحديث عدد الأطباق
+        document.getElementById('menuCount').textContent = menuItems.length;
+        
+        renderHomePage();
+        updateCartDisplay();
+        checkSavedLogin();
+        
+        // إضافة تأثيرات للبطاقات عند الظهور
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.product-card, .feature-card, .category-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+    });
+    
+    // التحقق من تسجيل الدخول المحفوظ
+    function checkSavedLogin() {
+        if (localStorage.getItem('restaurantAdminLoggedIn') === 'true') {
+            showAdminPanel();
+        }
+    }
+    
+    // التحويل من دولار إلى ليرة لبنانية
+    function usdToLbp(usdAmount) {
+        return Math.round(usdAmount * EXCHANGE_RATE);
+    }
+    
+    // تنسيق سعر الليرة اللبنانية
+    function formatLbpPrice(lbpAmount) {
+        if (lbpAmount >= 1000000) {
+            return (lbpAmount / 1000000).toFixed(1) + ' مليون ل.ل';
+        } else if (lbpAmount >= 1000) {
+            return (lbpAmount / 1000).toFixed(0) + ' ألف ل.ل';
+        }
+        return lbpAmount.toLocaleString() + ' ل.ل';
+    }
+    
+    // عرض الأقسام
+    function showSection(section) {
+        // إخفاء جميع الأقسام
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('menu-section').style.display = 'none';
+        document.getElementById('about-section').style.display = 'none';
+        
+        // إزالة النشط من جميع الروابط
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // إضافة نشط للرابط المحدد
+        event.target.classList.add('active');
+        
+        // عرض القسم المطلوب
+        if (section === 'home') {
+            document.getElementById('home-section').style.display = 'block';
+            renderHomePage();
+        } else if (section === 'menu') {
+            document.getElementById('menu-section').style.display = 'block';
+            renderMenuPage();
+        } else if (section === 'about') {
+            document.getElementById('about-section').style.display = 'block';
+        }
+    }
+    
+    // عرض صفحة الرئيسية
+    function renderHomePage() {
+        // لا حاجة هنا لأن صفحة الرئيسية ثابتة مع الأقسام
+    }
+    
+    // التمرير إلى قسم الموقع
+    function scrollToLocation() {
+        const locationSection = document.querySelector('.restaurant-location');
+        if (locationSection) {
+            locationSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // عرض معلومات الحجز
+    function showReservationInfo() {
+        document.getElementById('reservationModal').style.display = 'flex';
+    }
+    
+    // إغلاق نافذة معلومات الحجز
+    function closeReservationModal() {
+        document.getElementById('reservationModal').style.display = 'none';
+    }
+    
+    // تصفية الأطباق حسب الفئة
+    function filterProducts(category) {
+        currentFilter = category;
+        
+        // تحديث أزرار التصفية
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // تفعيل زر التصفية الحالي
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            const btnText = btn.textContent.toLowerCase();
+            const categoryText = category.toLowerCase();
+            
+            if ((category === 'الكل' && btnText === 'كل الأطباق') ||
+                (category === 'متوفر' && btnText === 'متوفر') ||
+                (category === 'غير متوفر' && btnText === 'غير متوفر') ||
+                (category !== 'الكل' && category !== 'متوفر' && category !== 'غير متوفر' && 
+                 btnText.includes(categoryText))) {
+                btn.classList.add('active');
+            }
+        });
+        
+        renderMenuPage();
+    }
+    
+    // عرض صفحة قائمة الطعام
+    function renderMenuPage() {
+        let menuHtml = '';
+        
+        // تصفية الأطباق
+        let filteredItems = menuItems;
+        
+        if (currentFilter === 'متوفر') {
+            filteredItems = menuItems.filter(item => item.inStock === true);
+        } else if (currentFilter === 'غير متوفر') {
+            filteredItems = menuItems.filter(item => item.inStock === false);
+        } else if (currentFilter !== 'الكل') {
+            filteredItems = menuItems.filter(item => item.category === currentFilter);
+        }
+        
+        if (filteredItems.length > 0) {
+            filteredItems.forEach(item => {
+                const lbpPrice = usdToLbp(item.price);
+                const formattedLbpPrice = formatLbpPrice(lbpPrice);
+                
+                menuHtml += `
+                    <div class="product-card" ${!item.inStock ? 'style="opacity: 0.8;"' : ''}>
+                        ${item.featured ? '<div class="product-badge featured"><i class="fas fa-star"></i> مميز</div>' : ''}
+                        ${item.new ? '<div class="product-badge new"><i class="fas fa-certificate"></i> جديد</div>' : ''}
+                        ${item.category === 'أطباق خاصة' ? '<div class="product-badge chef-special"><i class="fas fa-crown"></i> طبق خاص</div>' : ''}
+                        ${!item.inStock ? '<div class="product-badge out-of-stock"><i class="fas fa-times-circle"></i> غير متوفر</div>' : ''}
+                        
+                        <div class="product-image ${!item.inStock ? 'out-of-stock' : ''}">
+                            <img src="${item.image}" alt="${item.name}">
+                            ${!item.inStock ? '<div class="out-of-stock-overlay">غير متوفر</div>' : ''}
+                        </div>
+                        
+                        <div class="product-info">
+                            <div class="product-category">
+                                <i class="fas fa-tag"></i> ${item.category}
+                            </div>
+                            <h3 class="product-name">${item.name}</h3>
+                            <p class="product-description">${item.description}</p>
+                            <div class="product-price">
+                                <div class="price-container">
+                                    <div class="price">$${item.price.toFixed(2)}<span class="price-unit"> / ${getUnit(item.category)}</span></div>
+                                    <div class="price-lbp">
+                                        <span class="lbp-flag"></span> ${formattedLbpPrice}
+                                    </div>
+                                </div>
+                                ${item.category === 'مشروبات' ? '<div><i class="fas fa-wine-glass-alt" style="color: var(--primary); font-size: 1.5rem;"></i></div>' : 
+                                  item.category === 'حلويات' ? '<div><i class="fas fa-ice-cream" style="color: var(--primary); font-size: 1.5rem;"></i></div>' : 
+                                  '<div><i class="fas fa-utensils" style="color: var(--primary); font-size: 1.5rem;"></i></div>'}
+                            </div>
+                            <div class="contact-options">
+                                ${item.inStock ? `
+                                    <a href="https://wa.me/96170123456?text=مرحباً، أود طلب ${encodeURIComponent(item.name)} مقابل $${item.price} (${formattedLbpPrice})" 
+                                       class="whatsapp-btn" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                                    </a>
+                                    <a href="tel:+96170123456" class="call-btn">
+                                        <i class="fas fa-phone"></i> اتصل للطلب
+                                    </a>
+                                    <button onclick="addToCart(${item.id})" class="reserve-btn">
+                                        <i class="fas fa-cart-plus"></i> إضافة إلى السلة
+                                    </button>
+                                ` : `
+                                    <button class="whatsapp-btn out-of-stock-btn" disabled>
+                                        <i class="fas fa-times-circle"></i> غير متوفر حالياً
+                                    </button>
+                                    <button onclick="showNotification('${item.name} غير متوفر حالياً. يرجى التحقق لاحقاً!')" 
+                                            class="btn" style="background: var(--light); color: var(--dark); margin-top: 5px; width: 100%; border: 1px solid var(--secondary);">
+                                        <i class="fas fa-bell"></i> إشعار عند التوفر
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            menuHtml = `<div style="text-align: center; color: var(--brown-light); grid-column: 1/-1; padding: 40px;">
+                <i class="fas fa-utensils" style="font-size: 60px; margin-bottom: 20px; color: #ddd;"></i>
+                <h3>لا توجد أطباق</h3>
+                <p>${currentFilter === 'غير متوفر' ? 'جميع الأطباق متوفرة حالياً!' : 'تفقد لاحقاً للاطلاع على أطباق جديدة!'}</p>
+            </div>`;
+        }
+        
+        document.getElementById('all-products').innerHTML = menuHtml;
+    }
+    
+    // الحصول على الوحدة لفئة الطبق
+    function getUnit(category) {
+        switch(category) {
+            case 'مشروبات': return 'كأس';
+            case 'حلويات': return 'حصة';
+            case 'مقبلات': return 'طبق';
+            case 'أطباق رئيسية': return 'طبق';
+            case 'مشاوي': return 'طبق';
+            case 'أطباق خاصة': return 'وجبة';
+            default: return 'طبق';
+        }
+    }
+    
+    // إضافة إلى سلة الطلبات
+    function addToCart(itemId) {
+        const item = menuItems.find(i => i.id === itemId);
+        if (!item || !item.inStock) {
+            showNotification('عذراً، هذا الطبق غير متوفر حالياً!');
+            return;
+        }
+        
+        const existingItem = cart.find(cartItem => cartItem.id === itemId);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: 1,
+                category: item.category
+            });
+        }
+        
+        updateCartDisplay();
+        showNotification(`${item.name} تمت إضافته إلى السلة!`);
+    }
+    
+    // تحديث عرض سلة الطلبات
+    function updateCartDisplay() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalAmountUSD = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const totalAmountLBP = usdToLbp(totalAmountUSD);
+        
+        document.getElementById('cartTotalItems').textContent = totalItems;
+        
+        // تحديث محتوى السلة في النافذة
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartTotalLBP = document.getElementById('cartTotalLBP');
+        
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p style="text-align: center; color: var(--brown-light); padding: 20px; font-family: \'Noto Naskh Arabic\', serif;">سلة طلباتك تنتظر أشهى المأكولات...</p>';
+        } else {
+            let cartHtml = '';
+            cart.forEach(item => {
+                const itemTotalUSD = (item.price * item.quantity).toFixed(2);
+                const itemTotalLBP = formatLbpPrice(usdToLbp(item.price * item.quantity));
+                
+                cartHtml += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--secondary);">
+                        <div style="flex: 1;">
+                            <strong>${item.name}</strong>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-direction: row-reverse;">
+                                <button onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})" style="width: 30px; height: 30px; border: none; background: var(--light); border-radius: 50%; cursor: pointer; color: var(--primary);">-</button>
+                                <span style="min-width: 30px; text-align: center;">${item.quantity} ${getUnit(item.category)}</span>
+                                <button onclick="updateCartQuantity(${item.id}, ${item.quantity + 1})" style="width: 30px; height: 30px; border: none; background: var(--light); border-radius: 50%; cursor: pointer; color: var(--primary);">+</button>
+                                <span style="color: var(--primary); font-weight: 600; margin-right: 10px;">$${itemTotalUSD}</span>
+                            </div>
+                            <div style="color: var(--gold); font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                                <span class="lbp-flag" style="width: 15px; height: 11px;"></span> ${itemTotalLBP}
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: #ff4757; font-size: 18px; cursor: pointer; padding: 5px;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            cartItems.innerHTML = cartHtml;
+        }
+        
+        cartTotal.textContent = `$${totalAmountUSD.toFixed(2)}`;
+        cartTotalLBP.textContent = formatLbpPrice(totalAmountLBP);
+        
+        // حفظ السلة
+        localStorage.setItem('restaurantCart', JSON.stringify(cart));
+    }
+    
+    // تحديث كمية الطبق في السلة
+    function updateCartQuantity(itemId, newQuantity) {
+        if (newQuantity < 1) {
+            cart = cart.filter(item => item.id !== itemId);
+        } else {
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = newQuantity;
+            }
+        }
+        
+        updateCartDisplay();
+    }
+    
+    // إزالة طبق من السلة
+    function removeFromCart(itemId) {
+        cart = cart.filter(item => item.id !== itemId);
+        updateCartDisplay();
+        showNotification('تم إزالة الطبق من السلة');
+    }
+    
+    // إفراغ السلة
+    function clearCart() {
+        if (confirm('هل أنت متأكد من إفراغ سلة الطلبات؟')) {
+            cart = [];
+            updateCartDisplay();
+            showNotification('تم إفراغ السلة بنجاح');
+        }
+    }
+    
+    // إتمام الطلب عبر واتساب
+    function checkout() {
+        if (cart.length === 0) {
+            alert('سلة طلباتك فارغة! أضف بعض الأطباق أولاً.');
+            return;
+        }
+        
+        let message = "🍽️ *طلب من مطعم لامير* 🍽️\n\n";
+        message += "مرحباً، أود طلب:\n\n";
+        let totalUSD = 0;
+        
+        cart.forEach(item => {
+            const itemTotalUSD = (item.price * item.quantity).toFixed(2);
+            const itemTotalLBP = formatLbpPrice(usdToLbp(item.price * item.quantity));
+            message += `• ${item.name} × ${item.quantity} ${getUnit(item.category)}\n`;
+            message += `  السعر: $${itemTotalUSD} (${itemTotalLBP})\n\n`;
+            totalUSD += item.price * item.quantity;
+        });
+        
+        const totalLBP = formatLbpPrice(usdToLbp(totalUSD));
+        message += `📦 *المجموع: $${totalUSD.toFixed(2)} (${totalLBP})*\n\n`;
+        
+        // التحقق من أهلية التوصيل المجاني
+        if (totalUSD >= 25) {
+            message += "🎉 *توصيل مجاني* (الطلب فوق 25$)\n";
+        } else {
+            message += "🚚 رسوم التوصيل: 4$ (الطلب أقل من 25$)\n";
+        }
+        
+        message += "\n📞 *الحجز المسبق متاح* - اذكر ذلك للحجز المسبق!\n";
+        message += "\n📍 عنوان التوصيل: ________________\n";
+        message += "\n📱 رقم التواصل: ________________\n";
+        message += "\nيرجى تأكيد الطلب وتفاصيل التوصيل.";
+        message += "\n\nشكراً لك! - علي";
+        
+        const whatsappUrl = `https://wa.me/96170123456?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        // إغلاق السلة بعد الطلب
+        closeCartModal();
+    }
+    
+    // عرض نافذة السلة
+    function showCartModal() {
+        updateCartDisplay();
+        document.getElementById('cartModal').style.display = 'flex';
+    }
+    
+    // إغلاق نافذة السلة
+    function closeCartModal() {
+        document.getElementById('cartModal').style.display = 'none';
+    }
+    
+    // الإشعارات
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.innerHTML = `
+            <div style="position: fixed; top: 100px; left: 30px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+                        color: white; padding: 15px 25px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(139,69,19,0.4); 
+                        z-index: 10001; display: flex; align-items: center; gap: 12px; animation: fadeIn 0.3s ease-out;">
+                <i class="fas fa-check-circle" style="font-size: 20px;"></i>
+                <div>
+                    <strong>تم بنجاح!</strong><br>
+                    <span style="font-size: 14px;">${message}</span>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    
+    // نظام لوحة التحكم
+    function openAdminLogin() {
+        document.getElementById('loginModal').style.display = 'flex';
+    }
+    
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+        document.getElementById('adminPassword').value = '';
+    }
+    
+    function adminLogin() {
+        const password = document.getElementById('adminPassword').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+        
+        if (password === ADMIN_PASSWORD) {
+            if (rememberMe) {
+                localStorage.setItem('restaurantAdminLoggedIn', 'true');
+            }
+            closeLoginModal();
+            showAdminPanel();
+        } else {
+            alert('كلمة المرور غير صحيحة!');
+        }
+    }
+    
+    function showAdminPanel() {
+        document.getElementById('adminPanel').style.display = 'block';
+        renderAdminMenu();
+    }
+    
+    function closeAdminPanel() {
+        document.getElementById('adminPanel').style.display = 'none';
+        localStorage.removeItem('restaurantAdminLoggedIn');
+    }
+    
+    function renderAdminMenu() {
+        let adminHtml = '';
+        
+        if (menuItems.length > 0) {
+            adminHtml += '<div style="margin-bottom: 20px; color: var(--brown-light); font-family: \'Noto Naskh Arabic\', serif;">عرض فقط - قم بتعديل الأطباق في الكود</div>';
+            
+            // إضافة إحصائيات الأطباق
+            const inStockCount = menuItems.filter(item => item.inStock).length;
+            const outOfStockCount = menuItems.filter(item => !item.inStock).length;
+            const appetizersCount = menuItems.filter(item => item.category === 'مقبلات').length;
+            const mainDishesCount = menuItems.filter(item => item.category === 'أطباق رئيسية').length;
+            const drinksCount = menuItems.filter(item => item.category === 'مشروبات').length;
+            
+            adminHtml += `
+                <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <div style="background: var(--primary); color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 200px;">
+                        <div style="font-size: 1.5rem; font-weight: bold;">${menuItems.length}</div>
+                        <div>إجمالي الأطباق</div>
+                    </div>
+                    <div style="background: #8B4513; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 200px;">
+                        <div style="font-size: 1.5rem; font-weight: bold;">${appetizersCount}</div>
+                        <div>مقبلات</div>
+                    </div>
+                    <div style="background: #5D2906; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 200px;">
+                        <div style="font-size: 1.5rem; font-weight: bold;">${mainDishesCount}</div>
+                        <div>أطباق رئيسية</div>
+                    </div>
+                    <div style="background: #27ae60; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 200px;">
+                        <div style="font-size: 1.5rem; font-weight: bold;">${inStockCount}</div>
+                        <div>متوفر</div>
+                    </div>
+                    <div style="background: #e74c3c; color: white; padding: 15px; border-radius: 10px; flex: 1; min-width: 200px;">
+                        <div style="font-size: 1.5rem; font-weight: bold;">${outOfStockCount}</div>
+                        <div>غير متوفر</div>
+                    </div>
+                </div>
+            `;
+            
+            menuItems.forEach(item => {
+                const lbpPrice = formatLbpPrice(usdToLbp(item.price));
+                adminHtml += `
+                    <div style="display: flex; align-items: center; padding: 15px; border-bottom: 1px solid var(--secondary); ${!item.inStock ? 'background: var(--light);' : ''}">
+                        <div style="width: 60px; height: 60px; border-radius: 8px; overflow: hidden; margin-left: 15px; flex-shrink: 0; border: 1px solid var(--secondary);">
+                            <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; gap: 5px;">
+                                    ${!item.inStock ? '<span style="background: #e74c3c; color: white; padding: 3px 8px; border-radius: 20px; font-size: 12px;">غير متوفر</span>' : ''}
+                                    ${item.featured ? '<span style="background: var(--gold); color: var(--primary-dark); padding: 3px 8px; border-radius: 20px; font-size: 12px;">مميز</span>' : ''}
+                                    ${item.new ? '<span style="background: var(--primary); color: white; padding: 3px 8px; border-radius: 20px; font-size: 12px;">جديد</span>' : ''}
+                                </div>
+                                <strong>${item.name}</strong>
+                            </div>
+                            <div style="color: var(--brown-light); font-size: 14px; margin-top: 5px;">
+                                <span style="color: var(--primary); font-weight: bold;">$${item.price}</span> 
+                                (<span class="lbp-flag" style="width: 15px; height: 11px; display: inline-block;"></span> ${lbpPrice}) 
+                                | ${item.category}
+                            </div>
+                            <div style="font-size: 12px; color: var(--brown-light); margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">${item.description}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            adminHtml = '<p style="text-align: center; color: var(--brown-light); padding: 20px; font-family: \'Noto Naskh Arabic\', serif;">لا توجد أطباق حالياً</p>';
+        }
+        
+        document.getElementById('adminMenuList').innerHTML = adminHtml;
+    }
+    </script>
+</body>
+</html>
